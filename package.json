@@ -1,0 +1,9 @@
+{
+  "name": "fofx-net",
+  "version": "1.0.0",
+  "description": "Low level net sockets plugin for the fox platform",
+  "main": "index.js",
+  "repository": "git@github.com:functzia/fofx-net.git",
+  "author": "Alon Niv <oakfang@gmail.com>",
+  "license": "MIT"
+}
