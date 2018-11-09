@@ -76,6 +76,20 @@ module.exports = function netPlugin({ tcpPort = 7070, udpPort = 7070 }, log) {
         }
       }
       return async value => {
+        switch (typeof value) {
+          case 'string': {
+            break;
+          }
+          case 'object': {
+            if (value && value.type === 'Buffer') {
+              value = Buffer.from(value);
+              break;
+            }
+          }
+          default: {
+            value = JSON.stringify(value);
+          }
+        }
         const send = await clientPromise;
         return send(value);
       };
